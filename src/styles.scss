@@ -1,1 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$portfolio-primary: mat.define-palette(mat.$indigo-palette);
+$portfolio-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$portfolio-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$portfolio-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $portfolio-primary,
+      accent: $portfolio-accent,
+      warn: $portfolio-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($portfolio-theme);
+
+:root {
+  --text-color: #222;
+  --contrast-text-color: #ddd;
+
+  // --primary-color: 37, 46, 14;
+  // --secondary-color: 56, 85, 53;
+
+  --primary-color: 173, 107, 86;
+  --secondary-color: 15, 37, 40;
+}
+
+html,
+body,
+header,
+footer,
+p,
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+  color: var(--text-color);
+}
+
+body {
+  background: #ddd;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+.thin-text {
+  font-weight: 300;
+}
+
+.primary-color-text {
+  color: rgb(var(--primary-color));
+}
+
+.secondary-color-text {
+  color: rgb(var(--secondary-color));
+}
+
+// customize the scrollbar
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--primary-color));
+}
+
+::-webkit-scrollbar-track {
+  background: #bbb;
+}
+
+p {
+  font-weight: 500;
+}
+
+*::selection {
+  background: rgba(var(--secondary-color), 0.2);
+}

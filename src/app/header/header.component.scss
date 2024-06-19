@@ -1,0 +1,153 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 3rem;
+  background: linear-gradient(
+    45deg,
+    rgb(var(--primary-color)) 0%,
+    rgb(var(--secondary-color)) 100%
+  );
+
+  background-color: rgb(var(--primary-color));
+  backdrop-filter: blur(10px);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/images/noise.png");
+    opacity: 0.2;
+    z-index: -1;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
+p,
+a {
+  color: var(--contrast-text-color);
+}
+
+.header-title {
+  margin-left: 1rem;
+}
+
+.header-contact {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.header-contact-item {
+  font-size: 1.5rem;
+  transition: scale 0.2s;
+
+  &:hover {
+    scale: 1.2;
+  }
+}
+
+.header-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    background-color: rgba(0, 0, 0, 1);
+    backdrop-filter: blur(10px);
+    width: 80%;
+    height: 100vh;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+.header-mobile-menu-show {
+  display: flex;
+  right: 0;
+}
+
+.header-menu-item {
+  cursor: pointer;
+  font-weight: 500;
+
+  &:hover {
+    scale: 1.2;
+  }
+}
+
+.underline-slide {
+  position: relative;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.underline-slide::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  margin-top: 8rem;
+  background-color: var(--contrast-text-color);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: 0.2s;
+}
+
+.underline-slide:hover::after {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.header-mobile {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1rem;
+  }
+}
+
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.icon-bar {
+  width: 25px;
+  height: 3px;
+  position: relative;
+  background-color: var(--contrast-text-color);
+}

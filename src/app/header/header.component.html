@@ -1,0 +1,39 @@
+<header>
+  <div class="header-title">
+    <p><span class="thin-text">Bastien</span> <b> Ubassy</b> 👋</p>
+  </div>
+  <div class="header-menu">
+    <a class="underline-slide header-menu-item" href="#about-me">Resume</a>
+    <a class="underline-slide header-menu-item" href="#projects">Projects</a>
+    <a class="underline-slide header-menu-item" href="#contact">Contact</a>
+  </div>
+  <div class="header-mobile">
+    <div (click)="onClick()" class="hamburger-btn">
+      <div
+        class="icon-bar"
+        [@hamburgerX]="isHamburger ? 'hamburger' : 'topBar'"
+      ></div>
+      <div
+        class="icon-bar"
+        [@hamburgerX]="isHamburger ? 'hamburger' : 'middleBar'"
+      ></div>
+      <div
+        class="icon-bar"
+        [@hamburgerX]="isHamburger ? 'hamburger' : 'bottomBar'"
+      ></div>
+    </div>
+  </div>
+
+  <div class="header-contact">
+    <a
+      href="https://www.linkedin.com/in/bastien-ubassy/"
+      target="_blank"
+      matTooltip="LinkedIn"
+    >
+      <i class="header-contact-item fa-brands fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/bastub" target="_blank" matTooltip="GitHub"
+      ><i class="header-contact-item fa-brands fa-github"></i
+    ></a>
+  </div>
+</header>
