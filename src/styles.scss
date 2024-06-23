@@ -37,14 +37,13 @@ $portfolio-theme: mat.define-light-theme(
 @include mat.all-component-themes($portfolio-theme);
 
 :root {
+  --background-color1: #000;
+  --background-color2: #ddd;
   --text-color: #222;
-  --contrast-text-color: #ddd;
-
-  // --primary-color: 37, 46, 14;
-  // --secondary-color: 56, 85, 53;
-
-  --primary-color: 173, 107, 86;
-  --secondary-color: 15, 37, 40;
+  --text-color2: #ddd;
+  --primary-color: 1, 66, 2;
+  --secondary-color: 53, 77, 49;
+  --contrast-text-color: rgb(var(--secondary-color));
 }
 
 html,
@@ -61,7 +60,7 @@ h3 {
 }
 
 body {
-  background: #ddd;
+  background-color: var(--background-color2);
 }
 
 a {
@@ -92,15 +91,15 @@ body {
 
 // customize the scrollbar
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(var(--primary-color));
+  background: rgb(var(--secondary-color));
 }
 
 ::-webkit-scrollbar-track {
-  background: #bbb;
+  background: #222;
 }
 
 p {

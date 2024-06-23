@@ -37,7 +37,7 @@ header {
 
 p,
 a {
-  color: var(--contrast-text-color);
+  color: var(--text-color2);
 }
 
 .header-title {
@@ -114,7 +114,7 @@ a {
   bottom: -1px;
   left: 0;
   margin-top: 8rem;
-  background-color: var(--contrast-text-color);
+  background-color: var(--text-color2);
   visibility: hidden;
   transform: scaleX(0);
   transition: 0.2s;
@@ -149,5 +149,5 @@ a {
   width: 25px;
   height: 3px;
   position: relative;
-  background-color: var(--contrast-text-color);
+  background-color: var(--text-color2);
 }
